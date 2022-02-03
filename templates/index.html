@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='cssjs/index.css') }}">
+    <script src="{{ url_for('static',filename='cssjs/index.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static',filename='cssjs/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="heading">
+
+        </div>
+    </header>
+
+    <section class="main">
+
+        <div id = "inputDiv" class="box">
+            <input id="user" type="text" placeholder="Enter your name" class="enterDetail">
+            <button type="submit" class="btn" id="btn1" onclick="" >Next</button>
+            
+        </div>
+        
+        <div id="cameraDiv" class="box hidden">
+		<div class="inputPic">
+		    <video id="camera--view" autoplay playsinline></video>
+		    <canvas id="camera--sensor"></canvas>
+
+
+	    </div>
+	    <button type="submit" class="btn3" id="btn3">click</button>
+        </div>
+        
+         <div id="submitDiv" class="box box3 hidden">
+            <div class="icon" id = "">
+	<img src="" id = "camera--output" alt="icon">
+	    </div>
+            <button type="submit" class="btn"  id="btn2">Login</button>
+        </div>
+        
+    </section>
+    <script src = "{{ url_for('static',filename='cssjs/app.js') }}"></script>
+    <script src = "{{ url_for('static',filename='cssjs/adapter-min.js') }}"></script>
+</body>
+</html>
