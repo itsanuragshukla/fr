@@ -1,0 +1,16 @@
+#camera--view, #camera--sensor{
+    object-fit: cover;
+}
+
+#camera--sensor{
+    visibility:hidden;
+}
+
+#camera--view, #camera--senor{
+    transform: scaleX(-1);
+    filter: FlipH;
+}
+
+.hidden{
+	display:none;
+}
