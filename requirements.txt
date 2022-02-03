@@ -16,3 +16,4 @@ urllib3==1.26.8
 websockets==10.1
 Werkzeug==2.0.2
 face_recognition==1.2.2
+gunicorn==20.0.4
