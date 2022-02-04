@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import os
 from flask import Flask, request, render_template,jsonify,redirect,session
-#import face_recognition
+import face_recognition
 
 
 UNKNOWN_FOLDER = './unknown'
