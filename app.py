@@ -14,22 +14,7 @@ app.config['UNKNOWN_FOLDER'] = UNKNOWN_FOLDER
 app.config['KNOWN_FOLDER'] = KNOWN_FOLDER
 app.secret_key = "fr"
 
-@app.route("/view")
-def view():
-    con = sqlite3.connect("userInfo.db")
-    con.row_factory = sqlite3.Row
-    cur = con.cursor()
-    cur.execute("select * from userInfo")
-    rows = cur.fetchall()
-    return render_template("view.html",rows = rows)
 
-@app.route("/add")
-def add():
-    return render_template("add.html")
-
-@app.route('/getLost')
-def getLost():
-        return render_template('error.html',message=session['message'])
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
@@ -62,9 +47,11 @@ def upload_file():
         return
     return render_template('index.html')
 
-@app.route('/welcome')
-def welcome():
-        return render_template('welcome.html',name=session['name'])
+
+
+@app.route("/add")
+def add():
+    return render_template("add.html")
 
 
 @app.route("/savedetails",methods = ["POST","GET"])
@@ -92,6 +79,29 @@ def saveDetails():
         finally:
             return render_template("success.html",msg = msg)
             con.close()
+
+
+
+@app.route("/view")
+def view():
+    con = sqlite3.connect("userInfo.db")
+    con.row_factory = sqlite3.Row
+    cur = con.cursor()
+    cur.execute("select * from userInfo")
+    rows = cur.fetchall()
+    return render_template("view.html",rows = rows)
+
+
+
+@app.route('/getLost')
+def getLost():
+        return render_template('error.html',message=session['message'])
+
+
+@app.route('/welcome')
+def welcome():
+        return render_template('welcome.html',name=session['name'])
+
 
 
 
