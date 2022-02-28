@@ -76,6 +76,11 @@ def saveDetails():
             email = request.form["email"]
             user = request.form["userName"]
             phone = request.form["phone"]
+            face = request.files['face']
+        if face.filename != '':
+                image = request.files['face']
+                image.save(os.path.join(app.config['KNOWN_FOLDER'],user+'.jpg'))
+
             with sqlite3.connect("userInfo.db") as con:
                 cur = con.cursor()
                 cur.execute("INSERT into userInfo (name, email, user, phone) values (?,?,?,?)",(name,email,user,phone))

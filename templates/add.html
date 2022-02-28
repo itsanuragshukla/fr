@@ -5,12 +5,15 @@
 </head>  
 <body>  
     <h2>User Information</h2>   
-    <form action = "/savedetails" method="post">  
+    <form action = "/savedetails" method="post"enctype="multipart/form-data">  
     <table>  
         <tr><td>Name</td><td><input type="text" name="name"></td></tr>  
         <tr><td>Email</td><td><input type="email" name="email"></td></tr>  
         <tr><td>phone</td><td><input type="number" name="phone"></td></tr>
 	<tr><td>user Name</td><td><input type="text" name="userName"></td></tr>
+	<tr><td>Image containing related face</td><td><input type="file" name="face" accept="image/*" ></td></tr>
+
+
         <tr><td><input type="submit" value="Submit"></td></tr>  
     </table>  
     </form>  
