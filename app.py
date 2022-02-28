@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import os
 from flask import Flask, request, render_template,jsonify,redirect,session
-#import face_recognition
+import face_recognition
 import sqlite3
 
 
@@ -64,7 +64,7 @@ def saveDetails():
             user = request.form["userName"]
             phone = request.form["phone"]
             face = request.files['face']
-        if face.filename != '':
+            if face.filename != '':
                 image = request.files['face']
                 image.save(os.path.join(app.config['KNOWN_FOLDER'],user+'.jpg'))
 
